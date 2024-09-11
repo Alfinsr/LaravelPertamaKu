@@ -45,7 +45,7 @@
                         <div class="alert alert-success">
                             {{ session('success') }}
                         </div>
-
+                        
                         @endif
                         @if ($errors->any())
                         <div class="alert alert-danger">
@@ -85,10 +85,11 @@
                             @foreach ($data as $item )
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 <span class="task-text">
-                                    {!! $item->is_done == '1' ? '<del>':'' !!}
+                                        {!! $item->is_done == '1' ? '<del>':'' !!}
                                         {{ $item->task }}
                                         {!! $item->is_done == '1' ? '</del>':'' !!}
                                 </span>
+                                
                                 <input type="text" class="form-control edit-input" style="display: none;"
                                     value="{{ $item->task }}">
                                 <div class="btn-group">
